@@ -32,6 +32,6 @@
 /**
  * Content elements
  */
-$GLOBALS['TL_CTE']['images']['easy_bg_stretcher'] = 'ContentEasyBackgroundStretcher';
+$GLOBALS['TL_CTE']['media']['easy_bg_stretcher'] = 'ContentEasyBackgroundStretcher';
 
 ?>
