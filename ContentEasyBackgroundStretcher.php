@@ -50,10 +50,14 @@ class ContentEasyBackgroundStretcher extends ContentElement
 			return $objTemplate->parse();
 		}
 	
-		if (!strlen($this->singleSRC) || !is_file(TL_ROOT . '/' . $this->singleSRC))
+		$objFile = \FilesModel::findByPk($this->singleSRC);
+
+		if ($objFile === null || !is_file(TL_ROOT . '/' . $objFile->path))
 		{
 			return '';
 		}
+		
+		$this->singleSRC = $objFile->path;
 
 		return parent::generate();
 	}
