@@ -27,9 +27,21 @@
  * @license    LGPL
  * @filesource
  */
+ 
+/**
+ * Run in a custom namespace, so the class can be replaced
+ */
+namespace Contao;
 
-
-class ContentEasyBackgroundStretcher extends ContentElement
+/**
+ * Class ContentImage
+ *
+ * Front end content element "image".
+ * @copyright  Leo Feyer 2005-2012
+ * @author     Leo Feyer <http://contao.org>
+ * @package    Core
+ */
+class ContentEasyBackgroundStretcher extends \ContentElement
 {
 
 	/**
