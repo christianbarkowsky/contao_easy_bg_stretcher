@@ -13,7 +13,7 @@
 namespace Contao;
 
 
-class ContentEasyBackgroundStretcher extends \ContentElement
+class ModuleEasyBackgroundStretcher extends \Module
 {
 
 	/**
@@ -23,17 +23,23 @@ class ContentEasyBackgroundStretcher extends \ContentElement
 
 
 	/**
-	 * Return if the image does not exist
+	 * Display a wildcard in the back end
 	 */
 	public function generate()
 	{
 		if (TL_MODE == 'BE')
 		{
-			$objTemplate = new BackendTemplate('be_wildcard');
+			$objTemplate = new \BackendTemplate('be_wildcard');
+
 			$objTemplate->wildcard = '### EASY BACKGROUND STRETCHER ###';
+			$objTemplate->title = $this->headline;
+			$objTemplate->id = $this->id;
+			$objTemplate->link = $this->name;
+			$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
+
 			return $objTemplate->parse();
 		}
-	
+		
 		$objFile = \FilesModel::findByPk($this->singleSRC);
 
 		if ($objFile === null || !is_file(TL_ROOT . '/' . $objFile->path))
@@ -48,7 +54,7 @@ class ContentEasyBackgroundStretcher extends \ContentElement
 
 
 	/**
-	 * Generate the content element
+	 * Generate the module
 	 */
 	protected function compile()
 	{

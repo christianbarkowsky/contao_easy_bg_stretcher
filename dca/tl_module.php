@@ -8,11 +8,8 @@
  * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
  * @license    LGPL
  */
-
-
-/**
- * Miscellaneous
- */
-$GLOBALS['TL_LANG']['CTE']['easy_bg_stretcher'] = array('Easy Background Stretcher', 'Easy Background Stretcher.');
-
+ 
+ 
+$GLOBALS['TL_DCA']['tl_module']['palettes']['easy_bg_stretcher'] = '{title_legend},name,type;{source_legend},singleSRC';
+ 
 ?>

@@ -10,9 +10,6 @@
  */
 
 
-/**
- * Miscellaneous
- */
-$GLOBALS['TL_LANG']['CTE']['easy_bg_stretcher'] = array('Easy Background Stretcher', 'Easy Background Stretcher.');
+$GLOBALS['TL_LANG']['FMD']['easy_bg_stretcher'] = array('Easy Background Stretcher', 'Easy Background Stretcher.');
 
 ?>

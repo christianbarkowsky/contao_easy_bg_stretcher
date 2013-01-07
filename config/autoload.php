@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * Easy background stretcher
  * 
- * Copyright (C) 2005-2012 Leo Feyer
- * 
- * @package contao_easy_bg_stretcher
- * @link    http://www.contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @copyright  Christian Barkowsky 2012-2013
+ * @package    contao_easy_bg_stretcher
+ * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
+ * @license    LGPL
  */
+ 
 
-
-/**
- * Register the classes
- */
 ClassLoader::addClasses(array
 (
-	'Contao\ContentEasyBackgroundStretcher' => 'system/modules/contao_easy_bg_stretcher/elements/ContentEasyBackgroundStretcher.php'
+	// Elements
+	'Contao\ContentEasyBackgroundStretcher' => 'system/modules/contao_easy_bg_stretcher/elements/ContentEasyBackgroundStretcher.php',
+	
+	// Modules
+	'Contao\ModuleEasyBackgroundStretcher' => 'system/modules/contao_easy_bg_stretcher/modules/ModuleEasyBackgroundStretcher.php',
 ));
