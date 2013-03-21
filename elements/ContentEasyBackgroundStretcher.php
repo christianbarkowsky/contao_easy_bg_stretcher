@@ -17,6 +17,12 @@ class ContentEasyBackgroundStretcher extends \ContentElement
 {
 
 	/**
+	 * File object
+	 */
+	protected $objFile;
+	
+	
+	/**
 	 * Template
 	 */
 	protected $strTemplate;
@@ -34,14 +40,12 @@ class ContentEasyBackgroundStretcher extends \ContentElement
 			return $objTemplate->parse();
 		}
 	
-		$objFile = \FilesModel::findByPk($this->singleSRC);
+		$this->objFile = \FilesModel::findByPk($this->singleSRC);
 
-		if ($objFile === null || !is_file(TL_ROOT . '/' . $objFile->path))
+		if ($this->objFile === null)
 		{
 			return '';
 		}
-		
-		$this->singleSRC = $objFile->path;
 
 		return parent::generate();
 	}
@@ -53,10 +57,8 @@ class ContentEasyBackgroundStretcher extends \ContentElement
 	protected function compile()
 	{
 		global $objPage;
-	
-		$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/contao_easy_bg_stretcher/assets/js/jquery.backstretch.min.js';	
-		$GLOBALS['TL_HEAD'][] = '<script' . ($objPage->outputFormat == 'xhtml' ? ' type="text/javascript">/* <![CDATA[ */ ' : '>') . 'jQuery(document).ready(function(){ jQuery.backstretch("'. $this->singleSRC .'"); });' . ($objPage->outputFormat == 'xhtml' ? ' /* ]]> */' : '') . '</script>';
+		
+		$this->import('EasyBackgroundStretcher');
+		$this->EasyBackgroundStretcher->generateBackground($this->objFile);
 	}
 }
-
-?>

@@ -10,6 +10,17 @@
  */
  
  
-$GLOBALS['TL_DCA']['tl_module']['palettes']['easy_bg_stretcher'] = '{title_legend},name,type;{source_legend},singleSRC';
- 
-?>
+$GLOBALS['TL_DCA']['tl_module']['palettes']['easy_bg_stretcher'] = '{title_legend},name,type;{source_legend},singleEBSsrc';
+
+
+/**
+ * Fields
+ */
+$GLOBALS['TL_DCA']['tl_module']['fields']['singleEBSsrc'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['singleEBSsrc'],
+	'exclude'                 => true,
+	'inputType'               => 'fileTree',
+	'eval'                    => array('fieldType'=>'radio', 'mandatory'=>true, 'files'=>true, 'tl_class'=>'clr'),
+	'sql'                     => "varchar(255) NOT NULL default ''"
+);

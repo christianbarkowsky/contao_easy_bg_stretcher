@@ -17,6 +17,12 @@ class ModuleEasyBackgroundStretcher extends \Module
 {
 
 	/**
+	 * File object
+	 */
+	protected $objFile;
+	
+	
+	/**
 	 * Template
 	 */
 	protected $strTemplate;
@@ -26,11 +32,10 @@ class ModuleEasyBackgroundStretcher extends \Module
 	 * Display a wildcard in the back end
 	 */
 	public function generate()
-	{
+	{		
 		if (TL_MODE == 'BE')
 		{
 			$objTemplate = new \BackendTemplate('be_wildcard');
-
 			$objTemplate->wildcard = '### EASY BACKGROUND STRETCHER ###';
 			$objTemplate->title = $this->headline;
 			$objTemplate->id = $this->id;
@@ -40,14 +45,12 @@ class ModuleEasyBackgroundStretcher extends \Module
 			return $objTemplate->parse();
 		}
 		
-		$objFile = \FilesModel::findByPk($this->singleSRC);
+		$this->objFile = \FilesModel::findByPk($this->singleEBSsrc);
 
-		if ($objFile === null || !is_file(TL_ROOT . '/' . $objFile->path))
+		if ($this->objFile === null)
 		{
 			return '';
 		}
-		
-		$this->singleSRC = $objFile->path;
 
 		return parent::generate();
 	}
@@ -59,10 +62,8 @@ class ModuleEasyBackgroundStretcher extends \Module
 	protected function compile()
 	{
 		global $objPage;
-	
-		$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/contao_easy_bg_stretcher/assets/js/jquery.backstretch.min.js';	
-		$GLOBALS['TL_HEAD'][] = '<script' . ($objPage->outputFormat == 'xhtml' ? ' type="text/javascript">/* <![CDATA[ */ ' : '>') . 'jQuery(document).ready(function(){ jQuery.backstretch("'. $this->singleSRC .'"); });' . ($objPage->outputFormat == 'xhtml' ? ' /* ]]> */' : '') . '</script>';
+		
+		$this->import('EasyBackgroundStretcher');
+		$this->EasyBackgroundStretcher->generateBackground($this->objFile);
 	}
 }
-
-?>

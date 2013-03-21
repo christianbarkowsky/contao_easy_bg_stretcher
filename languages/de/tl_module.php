@@ -10,4 +10,5 @@
  */
 
 
-$GLOBALS['TL_LANG']['FMD']['easy_bg_stretcher'] = array('Easy Background Stretcher', 'Easy Background Stretcher.');
+$GLOBALS['TL_LANG']['tl_module']['singleEBSsrc'][0] = 'Quelldatei';
+$GLOBALS['TL_LANG']['tl_module']['singleEBSsrc'][1] = 'Bitte wählen Sie eine Datei oder einen Ordner aus der Dateiübersicht.';

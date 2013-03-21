@@ -12,6 +12,9 @@
 
 ClassLoader::addClasses(array
 (
+	// Classes
+	'Contao\EasyBackgroundStretcher'            => 'system/modules/contao_easy_bg_stretcher/classes/EasyBackgroundStretcher.php',
+
 	// Elements
 	'Contao\ContentEasyBackgroundStretcher' => 'system/modules/contao_easy_bg_stretcher/elements/ContentEasyBackgroundStretcher.php',
 	
