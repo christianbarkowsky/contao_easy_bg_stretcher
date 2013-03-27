@@ -56,8 +56,6 @@ class ContentEasyBackgroundStretcher extends \ContentElement
 	 */
 	protected function compile()
 	{
-		global $objPage;
-		
 		$this->import('EasyBackgroundStretcher');
 		$this->EasyBackgroundStretcher->generateBackground($this->objFile);
 	}
