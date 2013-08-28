@@ -5,7 +5,7 @@
  * 
  * @copyright  Christian Barkowsky 2012-2013
  * @package    contao_easy_bg_stretcher
- * @author     Christian Barkowsky <http://www.christianbarkowsky.de>
+ * @author     Christian Barkowsky <http://christianbarkowsky.de>
  * @license    LGPL
  */
 
