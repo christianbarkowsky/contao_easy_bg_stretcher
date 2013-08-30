@@ -27,7 +27,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['singleEBSsrc'] = array
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['easyBGStretcher_fade'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['easyBGStretcher_fade'],
+	'label'                   => &$GLOBALS['TL_LANG']['CTE']['easyBGStretcher_fade'],
 	'exclude'                 => true,
 	'inputType'               => 'text',
 	'eval'                    => array('tl_class'=>'w50', 'rgxp'=>'digit'),

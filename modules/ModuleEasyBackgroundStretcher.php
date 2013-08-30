@@ -62,6 +62,6 @@ class ModuleEasyBackgroundStretcher extends \Module
 	protected function compile()
 	{
 		$this->import('EasyBackgroundStretcher');
-		$this->EasyBackgroundStretcher->generateBackground($this->objFile);
+		$this->EasyBackgroundStretcher->generateBackground($this->objFile, $this->easyBGStretcher_fade);
 	}
 }

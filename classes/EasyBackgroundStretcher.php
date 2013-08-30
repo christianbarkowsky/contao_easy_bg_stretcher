@@ -22,7 +22,7 @@ class EasyBackgroundStretcher extends \Frontend
 	/**
 	 * Generate background
 	 */
-	public function generateBackground($objFile)
+	public function generateBackground($objFile, $varFade)
 	{
 		global $objPage;
 		
@@ -63,8 +63,13 @@ class EasyBackgroundStretcher extends \Frontend
 			
 			$singleSRC = $images[$i]['singleSRC'];
 		}
+		
+		if($varFade != '' && $varFade != '0')
+		{
+			$fade = 'fade:' . $varFade;
+		}
 	
 		$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/contao_easy_bg_stretcher/assets/js/jquery.backstretch.min.js';	
-		$GLOBALS['TL_HEAD'][] = '<script' . ($objPage->outputFormat == 'xhtml' ? ' type="text/javascript">/* <![CDATA[ */ ' : '>') . 'jQuery(document).ready(function(){ jQuery.backstretch("'. $singleSRC .'"); });' . ($objPage->outputFormat == 'xhtml' ? ' /* ]]> */' : '') . '</script>';
+		$GLOBALS['TL_HEAD'][] = '<script' . ($objPage->outputFormat == 'xhtml' ? ' type="text/javascript">/* <![CDATA[ */ ' : '>') . 'jQuery(document).ready(function(){ jQuery.backstretch("'. $singleSRC .'", { ' . $fade . ' }); });' . ($objPage->outputFormat == 'xhtml' ? ' /* ]]> */' : '') . '</script>';
 	}
 }

@@ -21,5 +21,12 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['easyBGStretcher_fade'] = array
 	'eval'                    => array('tl_class'=>'w50', 'rgxp'=>'digit'),
 	'sql'                     => "varchar(32) NOT NULL default ''"
 );
- 
-?>
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['easyBGStretcher_fade'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['CTE']['easyBGStretcher_fade'],
+	'exclude'                 => true,
+	'inputType'               => 'text',
+	'eval'                    => array('tl_class'=>'w50', 'rgxp'=>'digit'),
+	'sql'                     => "varchar(32) NOT NULL default ''"
+);

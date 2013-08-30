@@ -11,5 +11,3 @@
 
 
 $GLOBALS['TL_LANG']['FMD']['easy_bg_stretcher'] = array('Easy Background Stretcher', 'Easy Background Stretcher.');
-
-?>
