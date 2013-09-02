@@ -69,7 +69,7 @@ class EasyBackgroundStretcher extends \Frontend
 			$fade = 'fade:' . $varFade;
 		}
 	
-		$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/contao_easy_bg_stretcher/assets/js/jquery.backstretch.min.js';	
+		$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/easy_bg_stretcher/assets/js/jquery.backstretch.min.js';	
 		$GLOBALS['TL_HEAD'][] = '<script' . ($objPage->outputFormat == 'xhtml' ? ' type="text/javascript">/* <![CDATA[ */ ' : '>') . 'jQuery(document).ready(function(){ jQuery.backstretch("'. $singleSRC .'", { ' . $fade . ' }); });' . ($objPage->outputFormat == 'xhtml' ? ' /* ]]> */' : '') . '</script>';
 	}
 }

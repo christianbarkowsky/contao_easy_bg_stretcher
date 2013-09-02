@@ -13,11 +13,11 @@
 ClassLoader::addClasses(array
 (
 	// Classes
-	'Contao\EasyBackgroundStretcher'            => 'system/modules/contao_easy_bg_stretcher/classes/EasyBackgroundStretcher.php',
+	'Contao\EasyBackgroundStretcher'            => 'system/modules/easy_bg_stretcher/classes/EasyBackgroundStretcher.php',
 
 	// Elements
-	'Contao\ContentEasyBackgroundStretcher' => 'system/modules/contao_easy_bg_stretcher/elements/ContentEasyBackgroundStretcher.php',
+	'Contao\ContentEasyBackgroundStretcher' => 'system/modules/easy_bg_stretcher/elements/ContentEasyBackgroundStretcher.php',
 	
 	// Modules
-	'Contao\ModuleEasyBackgroundStretcher' => 'system/modules/contao_easy_bg_stretcher/modules/ModuleEasyBackgroundStretcher.php',
+	'Contao\ModuleEasyBackgroundStretcher' => 'system/modules/easy_bg_stretcher/modules/ModuleEasyBackgroundStretcher.php',
 ));
