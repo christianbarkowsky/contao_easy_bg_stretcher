@@ -3,7 +3,7 @@
 /**
  * Easy background stretcher
  * 
- * @copyright  Christian Barkowsky 2012-2013
+ * @copyright  Christian Barkowsky 2012-2014
  * @package    contao_easy_bg_stretcher
  * @author     Christian Barkowsky <http://christianbarkowsky.de>
  * @license    LGPL
@@ -34,7 +34,14 @@ class EasyBackgroundStretcher extends \Frontend
 		}
 		else
 		{
-			$objFolderfiles = \FilesModel::findByPid($objFile->id);
+			if(version_compare(VERSION, '3.2', '<'))
+			{
+				$objFolderfiles = \FilesModel::findByPid($objFile->id);
+			}
+			else
+			{
+				$objFolderfiles = \FilesModel::findByPid($objFile->uuid);
+			}
 
 			if ($objFolderfiles === null)
 			{
