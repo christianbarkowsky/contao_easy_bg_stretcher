@@ -34,7 +34,14 @@ class EasyBackgroundStretcher extends \Frontend
 		}
 		else
 		{
-			$objFolderfiles = \FilesModel::findByPid($objFile->id);
+			if(version_compare(VERSION, '3.2', '<'))
+			{
+				$objFolderfiles = \FilesModel::findByPid($objFile->id);
+			}
+			else
+			{
+				$objFolderfiles = \FilesModel::findByPid($objFile->uuid);
+			}
 
 			if ($objFolderfiles === null)
 			{

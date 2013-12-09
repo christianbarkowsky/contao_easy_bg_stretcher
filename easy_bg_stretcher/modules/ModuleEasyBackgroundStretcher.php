@@ -63,11 +63,6 @@ class ModuleEasyBackgroundStretcher extends \Module
 		{
 			return '';
 		}
-		
-		if (!is_file(TL_ROOT . '/' . $objFile->path))
-		{
-			return '';
-		}
 
 		return parent::generate();
 	}
@@ -78,10 +73,7 @@ class ModuleEasyBackgroundStretcher extends \Module
 	 */
 	protected function compile()
 	{
-		if ($this->objFile !== null)
-		{
-			$this->import('EasyBackgroundStretcher');
-			$this->EasyBackgroundStretcher->generateBackground($this->objFile, $this->easyBGStretcher_fade);
-		}
+		$this->import('EasyBackgroundStretcher');
+		$this->EasyBackgroundStretcher->generateBackground($this->objFile, $this->easyBGStretcher_fade);
 	}
 }
