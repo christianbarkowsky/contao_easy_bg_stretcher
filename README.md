@@ -1,5 +1,4 @@
 # Easy background stretcher for Contao
-======================================
 
 A easy jquery based background stretcher.
 
