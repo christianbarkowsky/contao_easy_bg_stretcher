@@ -3,7 +3,7 @@
 /**
  * Easy background stretcher
  * 
- * @copyright  Christian Barkowsky 2012-2013
+ * @copyright  Christian Barkowsky 2012-2014
  * @package    contao_easy_bg_stretcher
  * @author     Christian Barkowsky <http://christianbarkowsky.de>
  * @license    LGPL
@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['singleEBSsrc'] = array
 	'exclude'                 => true,
 	'inputType'               => 'fileTree',
 	'eval'                    => array('fieldType'=>'radio', 'mandatory'=>true, 'files'=>true, 'tl_class'=>'clr'),
-	'sql'                     => "varchar(255) NOT NULL default ''"
+	'sql'                     => (version_compare(VERSION, '3.2', '<')) ? "varchar(255) NOT NULL default ''" : "binary(16) NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['easyBGStretcher_fade'] = array
